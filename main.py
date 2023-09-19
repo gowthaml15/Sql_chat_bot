@@ -35,8 +35,8 @@ def generate_response(prompt_input, api_key):
         verbose=True,
         agent_type=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
     )
-    
-    return agent_executor(prompt_input)
+    response = agent_executor(prompt_input)
+    return response['output']
 
 # Initialize conversation history
 conversation_history = []
@@ -56,3 +56,4 @@ if st.button("Send"):
 # Example or instructions
 st.markdown("💡 **Tip:** You can start the conversation with a greeting or question.")
 st.markdown("📖 Learn more about how to create the OpenAI GPT-3 API Key [here](https://www.awesomescreenshot.com/blog/knowledge/chat-gpt-api).")
+
